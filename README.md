@@ -1,3 +1,8 @@
+This is a simple python ORM wrapper around MySQLdb, but it is not completed.
+Now, it just supports the simple function of select,insert,update and delete.
+I will update this project and make this ORM more powerful.
+
+
 Requirements:
 * Python 2.7
 * MySQLdb
