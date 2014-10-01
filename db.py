@@ -1,4 +1,4 @@
-#coding: utf-8
+# coding: utf-8
 
 import MySQLdb
 from MySQLdb.cursors import DictCursor
@@ -27,7 +27,7 @@ class DataBase(object):
     def dict_cursor(self):
         self._connect()
         return self._connection.cursor(DictCursor)
-    
+
     def _connect(self):
         if self._connection is not None:
             # check connection
@@ -148,7 +148,7 @@ class QuerySet(object):
         elif option == 'delete':
             del_what = 'DELETE FROM %s' % self._tb_name
             sql = ' '.join((del_what, where))
-            
+
         return sql, param
 
     def get_select(self, get_what=None):
@@ -157,8 +157,8 @@ class QuerySet(object):
             get_what = ','.join('`%s`.`%s`' % (self._tb_name, field)
                         for field in field_list)
         return get_what
-            
-    # get_what is a string of selected field       
+
+    # get_what is a string of selected field
     def select(self, get_what=None):
         sql, param = self.construct_sql('select', get_what=get_what)
         if sql is None:
@@ -201,6 +201,7 @@ class QuerySet(object):
         sql, param = self.construct_sql('delete')
         cursor = self._db.dict_cursor
         return cursor.execute(sql, param)
+
 
 if __name__ == '__main__':
     from model import db_test
