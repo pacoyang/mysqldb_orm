@@ -11,10 +11,10 @@ Structure:
 
 
 Usage:
+
     import MySQLdb
     from MySQLdb.cursors import DictCursor
     from model import db_test
-
     db = DataBase(db_test,
         db='db_test',
         user='XXX',
